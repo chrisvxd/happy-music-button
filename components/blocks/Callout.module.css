@@ -1,0 +1,89 @@
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 12px;
+}
+
+.withAccent {
+  grid-template-columns: 3fr 1fr;
+}
+
+.lavender {
+  background: var(--bs-lavender);
+}
+
+.grey {
+  background: #f4f4f4;
+}
+
+.content {
+  padding: 32px;
+}
+
+.withAccent .content {
+  padding-right: 0;
+}
+
+.grey .content {
+  padding: 40px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.serifTitle {
+  font-family: var(--bs-font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+
+.body {
+  color: var(--bs-ink);
+}
+
+.grey .body {
+  color: var(--bs-ink-80);
+}
+
+.cta {
+  margin-top: 24px;
+}
+
+.accentWrap {
+  height: 14rem;
+}
+
+.accent {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 100% 50%;
+  border-top-right-radius: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .withAccent {
+    grid-template-columns: 5fr 1fr;
+  }
+
+  .accentWrap {
+    height: 100%;
+  }
+
+  .accent {
+    object-fit: cover;
+  }
+
+  .content,
+  .grey .content {
+    padding: 24px;
+  }
+}

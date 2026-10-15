@@ -1,0 +1,63 @@
+.eyebrow {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.row > :first-child {
+  flex: 1 1 auto;
+}
+
+.bodyWrap,
+.row {
+  margin-top: 8px;
+}
+
+.bodyWrap {
+  margin-top: 12px;
+}
+
+.body {
+  color: var(--bs-ink);
+}
+
+.note {
+  flex: 0 0 auto;
+  max-width: 240px;
+  font-size: 20px;
+  line-height: 110%;
+}
+
+.ink {
+  color: var(--bs-ink-80);
+}
+
+.pink {
+  color: var(--bs-note-pink);
+}
+
+.brown {
+  color: var(--bs-note-brown);
+}
+
+.white {
+  color: var(--bs-paper-text);
+}
+
+.cta {
+  margin-top: 32px;
+}
+
+@media screen and (max-width: 479px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

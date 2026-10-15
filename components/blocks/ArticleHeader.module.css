@@ -1,0 +1,36 @@
+.image {
+  width: 100%;
+  height: auto;
+  margin: 40px auto;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--bs-ink-80);
+}
+
+h1 + .meta {
+  margin-top: 40px;
+}
+
+.byline {
+  font-style: italic;
+}
+
+.byline a,
+.byline strong {
+  color: var(--bs-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media screen and (max-width: 767px) {
+  .image {
+    margin: 24px auto;
+  }
+}

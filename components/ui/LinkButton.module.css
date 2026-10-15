@@ -1,0 +1,54 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  color: var(--bs-ink);
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.outline:hover {
+  background-color: var(--bs-ink);
+  color: var(--bs-paper);
+}
+
+.outline-light {
+  border-color: var(--bs-paper-text);
+  color: var(--bs-paper-text);
+}
+
+.outline-light:hover {
+  background-color: var(--bs-paper-text);
+  color: var(--bs-ink);
+}
+
+.solid-blue {
+  border-color: var(--bs-brand-blue);
+  background-color: var(--bs-brand-blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+}
+
+.solid-blue:hover {
+  background-color: #2f0fd6;
+  border-color: #2f0fd6;
+}
+
+.outline-blue {
+  border-color: var(--bs-brand-blue);
+  color: var(--bs-brand-blue);
+  font-size: 14px;
+  padding: 6px 16px;
+}
+
+.outline-blue:hover {
+  background-color: var(--bs-brand-blue);
+  color: #fff;
+}

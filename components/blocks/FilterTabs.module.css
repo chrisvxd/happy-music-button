@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--bs-ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.32px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.tab:hover {
+  opacity: 0.6;
+}
+
+.active {
+  border-bottom-color: #000;
+}
+
+.active:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

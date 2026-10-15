@@ -1,0 +1,74 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--bs-line);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.founders {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.founders a {
+  text-decoration: underline;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+  color: var(--bs-ink);
+}
+
+.companyName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.companyName img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.tagline {
+  font-size: 16px;
+  line-height: 160%;
+  opacity: 0.8;
+}
+
+.category {
+  margin-top: 16px;
+  font-family: var(--bs-font-hand);
+  font-size: 16px;
+  color: var(--bs-ink-80);
+}
+
+@media screen and (max-width: 479px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

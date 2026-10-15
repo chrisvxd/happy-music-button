@@ -1,0 +1,122 @@
+.tabs {
+  display: flex;
+  border-top: 1px solid var(--bs-line);
+  margin-bottom: 4rem;
+}
+
+.tab {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0 7px;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  color: var(--bs-ink);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.tab:hover,
+.active {
+  opacity: 1;
+}
+
+/* Active indicator sits on the top border */
+.tab::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: transparent;
+}
+
+.active::before {
+  background: var(--bs-ink);
+}
+
+.avatarTabs .tab img {
+  width: 68px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.labelTabs {
+  border-top: 0;
+  border-bottom: 1px solid var(--bs-line);
+  margin-bottom: 2rem;
+}
+
+.labelTabs .tab {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  color: var(--bs-brown);
+}
+
+.labelTabs .tab::before {
+  top: auto;
+  bottom: -1px;
+}
+
+.labelTabs .active::before {
+  background: var(--bs-brown);
+}
+
+.quote {
+  margin: 0;
+  animation: fade 0.35s ease;
+}
+
+.quote blockquote {
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 150%;
+  opacity: 0.8;
+}
+
+.italic blockquote {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.quote figcaption {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.plainCaption {
+  font-size: 16px !important;
+  opacity: 0.8;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .avatarTabs {
+    flex-wrap: wrap;
+    border-top: 0;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .avatarTabs .tab {
+    flex: 0 0 calc(33% - 1rem);
+    padding-top: 12px;
+  }
+}

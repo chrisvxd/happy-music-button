@@ -1,0 +1,275 @@
+/*
+ * Basis Set design tokens and base styles.
+ * Component-specific styles live next to each component as CSS modules.
+ */
+
+:root {
+  --bs-ink: #111111;
+  --bs-ink-80: #111111cc;
+  --bs-ink-60: #11111199;
+  --bs-line: #1111111a;
+  --bs-frame: #11111114;
+  --bs-paper: #fcfcfa;
+  --bs-paper-text: #fcfdfa;
+  --bs-white: #ffffff;
+  --bs-accent: #6528ff;
+  --bs-brand-blue: #441fff;
+  --bs-lavender: #eee7f9;
+  --bs-lavender-2: #e9e8fd;
+  --bs-pastel-yellow: #fef7e5;
+  --bs-pastel-blue: #e0daff;
+  --bs-brown: #aa3815;
+  --bs-dark-green: #005b38;
+  --bs-dark-pink: #55005b;
+  --bs-note-pink: #55005bb3;
+  --bs-note-brown: #aa3815b3;
+
+  --bs-container: 43.625rem;
+  --bs-section-gutter: 0px;
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --bs-section-gutter: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --bs-section-gutter: 24px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  :root {
+    --bs-section-gutter: 20px;
+  }
+}
+
+/*
+ * Font tokens must be declared on the element that carries next/font's variable
+ * classes (<body> on the site, the root wrapper inside the Puck iframe), otherwise
+ * var(--font-inter) is unresolved where the token is computed.
+ */
+.bs-fonts {
+  --bs-font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  --bs-font-hand: var(--font-hand), "Shadows Into Light", cursive;
+  --bs-font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+  font-family: var(--bs-font-sans);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bs-paper);
+  color: var(--bs-ink);
+  font-family: var(--bs-font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Shared type styles, mirrored from the original site */
+.bs-h1 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -1.28px;
+}
+
+.bs-h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.8px;
+}
+
+.bs-h3 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.8px;
+}
+
+.bs-h4 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+}
+
+.bs-hand {
+  font-family: var(--bs-font-hand);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+}
+
+.bs-serif-accent {
+  font-family: var(--bs-font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.bs-lead {
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.bs-body {
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.bs-container {
+  width: 100%;
+  max-width: var(--bs-container);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Rich text produced by Puck's richtext field */
+.bs-prose {
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--bs-ink-80);
+}
+
+/* Puck wraps rich text in its own elements, so match descendants rather than direct children */
+.bs-prose :is(p, ul, ol, blockquote, h2, h3, h4, figure, pre)
+  + :is(p, ul, ol, blockquote, figure, pre) {
+  margin-top: 16px;
+}
+
+.bs-prose ul,
+.bs-prose ol {
+  margin: 0;
+}
+
+.bs-prose h2 {
+  color: var(--bs-ink);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+  margin-top: 40px;
+}
+
+.bs-prose h3 {
+  color: var(--bs-ink);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  margin-top: 32px;
+}
+
+.bs-prose h4 {
+  color: var(--bs-ink);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 140%;
+  margin-top: 24px;
+}
+
+.bs-prose :is(h2, h3, h4):first-child {
+  margin-top: 0;
+}
+
+.bs-prose a {
+  color: var(--bs-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.bs-prose strong {
+  color: var(--bs-ink);
+  font-weight: 600;
+}
+
+.bs-prose ul,
+.bs-prose ol {
+  padding-left: 20px;
+}
+
+.bs-prose li + li {
+  margin-top: 4px;
+}
+
+.bs-prose blockquote {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--bs-line);
+  font-style: italic;
+}
+
+.bs-prose img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .bs-h1 {
+    font-size: 54px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bs-h1 {
+    font-size: 40px;
+    letter-spacing: -0.8px;
+  }
+
+  .bs-h2 {
+    font-size: 32px;
+  }
+
+  .bs-h3 {
+    font-size: 30px;
+  }
+
+  .bs-h4 {
+    font-size: 24px;
+  }
+
+  .bs-lead {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .bs-h1 {
+    font-size: 34px;
+  }
+}

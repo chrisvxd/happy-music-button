@@ -1,0 +1,36 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: none;
+  width: 21px;
+  min-width: 21px;
+  height: 12px;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  gap: 4px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.arrow {
+  width: 13px;
+  min-width: 13px;
+  height: 7px;
+}
+
+/* Arrow slides through the pill on hover of any parent link */
+:global(a:hover) .track,
+:global(button:hover) .track {
+  transform: translateX(17px);
+}
+
+.left {
+  transform: scaleX(-1);
+}

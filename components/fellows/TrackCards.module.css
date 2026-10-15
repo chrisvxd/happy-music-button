@@ -1,0 +1,93 @@
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.heading {
+  color: var(--bs-brand-blue);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -2.4px;
+  margin-bottom: 64px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 66px;
+}
+
+/* Hexagonal "portal" cards: a blue/magenta outer shape with an inset fill */
+.card {
+  --shape: polygon(50% 0, 100% 14%, 100% 86%, 50% 100%, 0 86%, 0 14%);
+  position: relative;
+  width: 278px;
+  height: 380px;
+  padding: 10px;
+  clip-path: var(--shape);
+  background: linear-gradient(160deg, var(--bs-brand-blue) 55%, #f0f 56%);
+}
+
+.inner {
+  height: 100%;
+  clip-path: var(--shape);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 24px 60px;
+  color: var(--bs-ink);
+}
+
+.blue .inner {
+  background: #e9e8fd;
+}
+
+.yellow .inner {
+  background: #fef7e5;
+}
+
+.violet .inner {
+  background: #e0daff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.workWith {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.logos img {
+  height: 20px;
+  width: auto;
+  max-width: 90px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  .heading {
+    font-size: 36px;
+    letter-spacing: -1.2px;
+  }
+
+  .row {
+    gap: 32px;
+  }
+}
